@@ -11,13 +11,13 @@ connectDb();
 //middleware
 app.use(express.json());
 app.use(cors())
-app.use(express.static(path.join(__dirname, "../frontend/build")))
+app.use(express.static(path.join(__dirname, "./frontend/build")))
 
 
 //routes
 app.use("/api/v1", routes)
 app.use("*", function (req, resp) {
-    resp.sendFile(path.join(__dirname, "../frontend/build/index.html"))
+    resp.sendFile(path.join(__dirname, "./frontend/build/index.html"))
 })
 
 
